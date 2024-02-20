@@ -1,5 +1,5 @@
 use crate::{save_theme_value, Theme};
-use cocoa::{
+use tauri::cocoa::{
     appkit::{NSAppearance, NSAppearanceNameVibrantDark, NSAppearanceNameVibrantLight, NSWindow},
     base::{id, nil},
 };
