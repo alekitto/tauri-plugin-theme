@@ -3,12 +3,11 @@ use futures_lite::StreamExt;
 use gtk::prelude::GtkSettingsExt;
 use gtk::Settings;
 use std::sync::LazyLock;
-use tauri::{async_runtime, command, AppHandle, Runtime};
-use tintanum::{SchemePreference, SchemeProxy};
-use tokio::sync::{
-    mpsc::{channel, Sender},
-    Mutex,
+use tauri::{
+    async_runtime::{self, channel, Mutex, Sender},
+    command, AppHandle, Runtime,
 };
+use tintanum::{SchemePreference, SchemeProxy};
 
 #[command]
 pub fn set_theme<R: Runtime>(app: AppHandle<R>, theme: Theme) -> Result<(), &'static str> {
